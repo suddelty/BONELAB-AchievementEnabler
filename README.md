@@ -56,7 +56,7 @@ This mod patches the game's achievement system to prevent mods from disabling St
 ### Install
 
 1. Download the latest release from the [Releases](https://github.com/suddelty/BONELAB-AchievementEnabler/releases) page
-2. Extract `AchievementEnabler.dll` to your BONELAB `Mods` folder
+2. Drop `AchievementEnabler.dll` into your BONELAB `Mods` folder
    - Default location: `Steam\steamapps\common\BONELAB\Mods\`
 3. Launch BONELAB - the mod will load automatically
 
