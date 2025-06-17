@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyTitle>BONELAB Achievement Enabler</AssemblyTitle>
+    <AssemblyDescription>Mod that re-enables achievements when other mods are loaded</AssemblyDescription>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <OutputPath>builds\</OutputPath>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MelonLoader">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\MelonLoader.dll')">$(GamePath)\MelonLoader\MelonLoader.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\net6.0\MelonLoader.dll')">$(GamePath)\MelonLoader\net6.0\MelonLoader.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\net35\MelonLoader.dll')">$(GamePath)\MelonLoader\net35\MelonLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\Il2Cppmscorlib.dll')">$(GamePath)\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\Il2CppSystem.dll')">$(GamePath)\MelonLoader\Managed\Il2CppSystem.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\UnityEngine.dll')">$(GamePath)\MelonLoader\Managed\UnityEngine.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\UnityEngine.CoreModule.dll')">$(GamePath)\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\Assembly-CSharp.dll')">$(GamePath)\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSLZ.Marrow">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Managed\Il2CppSLZ.Marrow.dll')">$(GamePath)\MelonLoader\Managed\Il2CppSLZ.Marrow.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.dll')">$(GamePath)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\Dependencies\0Harmony.dll')">$(GamePath)\MelonLoader\Dependencies\0Harmony.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\net6\0Harmony.dll')">$(GamePath)\MelonLoader\net6\0Harmony.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\net35\0Harmony.dll')">$(GamePath)\MelonLoader\net35\0Harmony.dll</HintPath>
+      <HintPath Condition="Exists('$(GamePath)\MelonLoader\0Harmony.dll')">$(GamePath)\MelonLoader\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if defined GamePath ( copy &quot;$(TargetPath)&quot; &quot;$(GamePath)\Mods\&quot; )" />
+  </Target>
+
+</Project> 
