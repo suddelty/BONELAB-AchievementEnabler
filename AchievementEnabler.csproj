@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyTitle>BONELAB Achievement Enabler</AssemblyTitle>
     <AssemblyDescription>Mod that re-enables achievements when other mods are loaded</AssemblyDescription>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
     <OutputPath>builds\</OutputPath>
     <OutputType>Library</OutputType>
     <LangVersion>latest</LangVersion>
